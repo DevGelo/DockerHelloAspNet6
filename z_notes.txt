@@ -1,0 +1,19 @@
+// Containerizing an ASP.NET Core 3.0 Web API by Julio Casal
+// https://www.youtube.com/watch?v=Po9jQS7WBDQ
+
+dotnet --version
+dotnet --help
+dotnet new --help
+dotnet new --list
+
+dotnet new webapi -o DockerHelloAspNet6 --no-https
+cd DockerHelloAspNet6
+code .
+
+// Docker:Add
+
+docker build -t hello-aspnet6:v1 .
+docker images
+docker run -it --rm -p 8089:80 hello-aspnet6:v1
+
+//Ctrl + C
